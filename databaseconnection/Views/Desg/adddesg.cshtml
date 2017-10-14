@@ -1,0 +1,42 @@
+@model databaseconnection.Models.Designation
+
+@{
+    ViewData["Title"] = "adddesg";
+}
+
+<h2>adddesg</h2>
+
+<form asp-action="adddesg">
+    <div class="form-horizontal">
+        <h4>Designation</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="DesId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DesId" class="form-control" />
+                <span asp-validation-for="DesId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="DesName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DesName" class="form-control" />
+                <span asp-validation-for="DesName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
